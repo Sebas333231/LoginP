@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage(
-                              imagen ? '../images/imagen4.jpg' : '../images/imagen5.jpg'
+                              imagen ? '../images/imagen6.jpg' : '../images/imagen7.jpg'
                           ),
                           fit: BoxFit.cover
                       )
@@ -122,7 +122,8 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                      imagen ? '../images/imagen4.jpg' : '../images/imagen5.jpg'
+                      //imagen ? '../images/imagen8.jpg' : '../images/imagen7.jpg'
+                        '../images/imagen7.jpg'
                     ),
                     fit: BoxFit.cover
                   )

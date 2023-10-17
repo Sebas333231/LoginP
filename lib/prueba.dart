@@ -1,3 +1,8 @@
+import 'dart:convert';
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:file_picker/file_picker.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -801,6 +806,148 @@ class _Prueba4State extends State<Prueba4> {
 }
 
 
+class Prueba5 extends StatefulWidget {
+  TextEditingController celularController = TextEditingController();
+  TextEditingController imagenController = TextEditingController();
+
+  Prueba5({
+    Key? key,
+    required this.celularController,
+    required this.imagenController
+  }) : super(key: key);
+
+  @override
+  State<Prueba5> createState() => _Prueba5State(
+      celularController: celularController,
+      imagenController: imagenController
+  );
+}
+
+class _Prueba5State extends State<Prueba5> {
+
+  TextEditingController celularController = TextEditingController();
+  TextEditingController imagenController = TextEditingController();
+
+  _Prueba5State({
+    required this.celularController,
+    required this.imagenController
+  });
+
+
+  var inputtelefono = MaskTextInputFormatter(
+      mask: "### ### ####", filter: {"#":  RegExp(r'[0-9]')}
+  );
+
+
+  String selectFile = '';
+  Uint8List? selectedImagenInBytes;
+  int imagenCounts = 0;
+  List<Uint8List> pickedImagesBytes = [];
+  String foto = '';
+
+
+  _selectFile(bool imagenFrom) async{
+    FilePickerResult? fileResult = await FilePicker.platform.pickFiles();
+
+    if(fileResult != null){
+      setState(() {
+        selectFile = fileResult.files.first.name;
+        selectedImagenInBytes = fileResult.files.first.bytes;
+
+        imagenController.text = selectFile;
+      });
+    }
+    print(selectFile);
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      //crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: Colors.white),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Padding(
+              padding: EdgeInsets.only(left: 2.0, right: 2.0),
+              child: TextFormField(
+                inputFormatters: [inputtelefono],
+                keyboardType: TextInputType.number,
+                controller: celularController,
+                obscureText: false,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.white),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.white),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  hintText: 'Numero de Daviplata',
+                  fillColor: Colors.grey[200],
+                  filled: true,
+                ),
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Se requiere de este campo';
+                  }
+                },
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 30),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          child: selectFile.isEmpty
+          ? const CircleAvatar(
+            radius: 50,
+            backgroundImage: AssetImage(
+              "../images/imagen2.jpg",
+            ),
+          ) : CircleAvatar(
+            radius: 50,
+            backgroundImage: MemoryImage(
+                selectedImagenInBytes!
+            ),
+          )
+        ),
+        const SizedBox(height: 20),
+        GestureDetector(
+          onTap: ()async{
+            _selectFile(true);
+          },
+          child: Container(
+            width: 200,
+            height: 50,
+            padding: const EdgeInsets.all(15.0),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Center(
+              child: Text(
+                'Seleccionar imagen',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
 
 
 

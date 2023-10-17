@@ -926,7 +926,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                           'StayAway',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 105,
+                              fontSize: 100,
                               fontFamily: 'CroissantOne'),
                         ),
                         Padding(
@@ -938,7 +938,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                             "y haz realidad tus sueños de viaje!",
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 20,
+                                fontSize: 17,
                                 fontFamily: 'CroissantOne'),
                           ),
                         )
@@ -1022,7 +1022,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                             child: Text(
                                               'Viaja con Estilo, Destinos de Ensueño a Tu Alcance',
                                               style: TextStyle(
-                                                  fontSize: 20,
+                                                  fontSize: 17,
                                                   color: Colors.white
                                                   //fontFamily: 'DelaGothicOne'
                                                   ),
@@ -1168,7 +1168,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                           ),
                                         ),
                                       ),
-                                      const SizedBox(height: 20),
+                                      const SizedBox(height: 10),
                                       Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
@@ -1178,12 +1178,12 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                             child: Text(
                                               'Continuar con',
                                               style: TextStyle(
-                                                  fontSize: 20,
+                                                  fontSize: 18,
                                                   color: Colors.white,
                                                   fontWeight: FontWeight.bold),
                                             ),
                                           ),
-                                          const SizedBox(height: 20),
+                                          const SizedBox(height: 10),
                                           Row(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
@@ -1243,7 +1243,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                           ),
                                         ],
                                       ),
-                                      const SizedBox(height: 40)
+                                      const SizedBox(height: 20)
                                     ],
                                   ),
                                   Register()
@@ -1561,7 +1561,7 @@ class _RegisterState extends State<Register> {
 
   int currentIndex = 0;//inicializacion de la lista
 
-  double porcentaje = 0.25;//porcentaje del circulo de progreso de las vistas
+  double porcentaje = 0.20;//porcentaje del circulo de progreso de las vistas
 
   final List<String> options = [
     'Cedula de Ciudadania',
@@ -1606,6 +1606,8 @@ class _RegisterState extends State<Register> {
   TextEditingController tipoBanco = TextEditingController();
   TextEditingController cuentaBancaria = TextEditingController();
   TextEditingController numeroDaviplata = TextEditingController();
+  TextEditingController celularController = TextEditingController();
+  TextEditingController imagenController = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController contrasenha = TextEditingController();
   TextEditingController confirmacionContasenha = TextEditingController();
@@ -1636,12 +1638,12 @@ class _RegisterState extends State<Register> {
               if (index >= currentIndex) {
                 setState(() {
                   currentIndex = index;
-                  porcentaje += 0.25;
+                  porcentaje += 0.20;
                 });
               } else {
                 setState(() {
                   currentIndex = index;
-                  porcentaje -= 0.25;
+                  porcentaje -= 0.20;
                 });
               }
             },
@@ -1666,11 +1668,11 @@ class _RegisterState extends State<Register> {
                       value: porcentaje,
                       backgroundColor: Colors.grey,
                       valueColor:
-                          AlwaysStoppedAnimation<Color>(porcentaje <= 0.25
+                          AlwaysStoppedAnimation<Color>(porcentaje <= 0.20
                               ? Colors.yellow
-                              : porcentaje <= 0.75
+                              : porcentaje <= 0.60
                                   ? Colors.lightGreen
-                                  : porcentaje > 0.75
+                                  : porcentaje > 0.60
                                       ? Colors.green
                                       : Colors.white),
                       //Aqui evalua el color del boton dependiendo el porcentaje
@@ -1703,6 +1705,8 @@ class _RegisterState extends State<Register> {
                         "Banco": tipoBanco.text,
                         "CuentaBancaria": cuentaBancaria.text,
                         "NumeroDaviplata": numeroDaviplata.text,
+                        "Celular": celularController.text,
+                        "Imagen": imagenController.text,
                         "Email": email.text,
                         "Password": contrasenha.text,
                         "ConfirmacionPassowrd": confirmacionContasenha.text
@@ -1768,6 +1772,18 @@ class _RegisterState extends State<Register> {
             )),
       ),
       //Cuarta vista
+      Vistas(
+        vista1: Form(
+          key: formKey,
+          child: Expanded(
+            child: Prueba5(
+                celularController: celularController,
+                imagenController: imagenController
+            ),
+          ),
+        )
+      ),
+      //Quinta Vista
       Vistas(
         vista1: Form(
           key: formKey,
