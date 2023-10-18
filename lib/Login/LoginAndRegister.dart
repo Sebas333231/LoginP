@@ -49,19 +49,27 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
               imagen = false;
             }
             return Scaffold(
-                backgroundColor: Color(0xFF1C0E38),
                 body: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                   decoration: BoxDecoration(
+                      color: Color(0x73606060),
                       image: DecorationImage(
                           image: AssetImage(
-                              imagen ? '../images/imagen6.jpg' : '../images/imagen7.jpg'
+                              //imagen ? '../images/imagen6.jpg' : '../images/imagen7.jpg',
+                              '../images/imagen5.jpg'
                           ),
                           fit: BoxFit.cover
                       )
                   ),
-                  child: Login(tabController: tabController),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    decoration: BoxDecoration(
+                        color: Color(0x27000000)
+                    ),
+                    child: Login(tabController: tabController),
+                  )
                 )
             );
           }else if (responsive.maxWidth <= 300){
@@ -71,19 +79,26 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
               imagen = false;
             }
             return Scaffold(
-              backgroundColor: Color(0xFF1C0E38),
               body: Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(
-                            imagen ? '../images/imagen4.jpg' : '../images/imagen5.jpg'
+                            //imagen ? '../images/imagen4.jpg' : '../images/imagen5.jpg'
+                            '../images/imagen5.jpg'
                         ),
                         fit: BoxFit.cover
                     )
                 ),
-                child: Login(tabController: tabController),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  decoration: BoxDecoration(
+                      color: Color(0x27000000)
+                  ),
+                  child: Login(tabController: tabController),
+                )
               )
             );
           }else if(responsive.maxWidth <= 500){
@@ -93,19 +108,26 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
               imagen = false;
             }
             return Scaffold(
-                backgroundColor: Color(0xFF1C0E38),
                 body: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage(
-                              imagen ? '../images/imagen4.jpg' : '../images/imagen5.jpg'
+                              //imagen ? '../images/imagen4.jpg' : '../images/imagen5.jpg'
+                              '../images/imagen5.jpg'
                           ),
                           fit: BoxFit.cover
                       )
                   ),
-                  child: Login(tabController: tabController),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    decoration: BoxDecoration(
+                      color: Color(0x27000000)
+                    ),
+                    child: Login(tabController: tabController),
+                  )
                 )
             );
           }else if(responsive.maxWidth >=1000){
@@ -115,20 +137,26 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
               imagen = false;
             }
             return Scaffold(
-              backgroundColor: Color(0xFF1C0E38),
               body: Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
                       //imagen ? '../images/imagen8.jpg' : '../images/imagen7.jpg'
-                        '../images/imagen7.jpg'
+                        '../images/imagen5.jpg'
                     ),
                     fit: BoxFit.cover
                   )
                 ),
-                child: Login(tabController: tabController),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  decoration: const BoxDecoration(
+                      color: Color(0x27000000)
+                  ),
+                  child: Login(tabController: tabController),
+                )
               )
             );
           } else{
@@ -138,19 +166,26 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
               imagen = false;
             }
             return Scaffold(
-                backgroundColor: Color(0xFF1C0E38),
                 body: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage(
-                              imagen ? '../images/imagen4.jpg' : '../images/imagen5.jpg'
+                              //imagen ? '../images/imagen4.jpg' : '../images/imagen5.jpg'
+                              '../images/imagen5.jpg'
                           ),
                           fit: BoxFit.cover
                       )
                   ),
-                  child: Login(tabController: tabController),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    decoration: BoxDecoration(
+                        color: Color(0x27000000)
+                    ),
+                    child: Login(tabController: tabController),
+                  )
                 )
             );
           }

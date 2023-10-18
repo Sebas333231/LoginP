@@ -23,10 +23,10 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, responsive) {
       //Aqui al igual ya es responsive atravez de los condicionales
-      if (responsive.maxWidth == 375) {
+      if (responsive.maxWidth <= 410) {
         return Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 23.0, vertical: 27.0),
+                const EdgeInsets.symmetric(horizontal: 23.0, vertical: 15.0),
             child: Container(
                 decoration: BoxDecoration(
                     color: Color(0x20D2D2D2),
@@ -100,14 +100,14 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                     child: Text(
                                       'Viaja con Estilo, Destinos de Ensueño a Tu Alcance',
                                       style: TextStyle(
-                                          fontSize: 17, color: Colors.white
+                                          fontSize: 14, color: Colors.white
                                           //fontFamily: 'DelaGothicOne'
                                           ),
                                     ),
                                   ),
                                 ],
                               ),
-                              const SizedBox(height: 25),
+                              const SizedBox(height: 15),
                               Padding(
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 25.0),
@@ -144,7 +144,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 30),
+                              const SizedBox(height: 15),
                               Padding(
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 25.0),
@@ -211,8 +211,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                 ),
                               ),
                               const SizedBox(height: 10),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 65),
+                              Center(
                                 child: GestureDetector(
                                   child: Container(
                                     width: 200,
@@ -235,7 +234,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 20),
+                              const SizedBox(height: 10),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
@@ -244,12 +243,12 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                     child: Text(
                                       'Continuar con',
                                       style: TextStyle(
-                                          fontSize: 20,
+                                          fontSize: 17,
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ),
-                                  const SizedBox(height: 20),
+                                  const SizedBox(height: 10),
                                   Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
@@ -306,7 +305,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                   ),
                                 ],
                               ),
-                              const SizedBox(height: 40)
+                              const SizedBox(height: 10),
                             ],
                           ),
                           //El register se realizo en una clase diferente
@@ -316,10 +315,10 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                     ),
                   ],
                 )));
-      } else if (responsive.maxWidth <= 300) {
+      } else if (responsive.maxWidth <= 350) {
         return Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 25.0),
+                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
             child: Container(
                 decoration: BoxDecoration(
                   color: //Colors.black,
@@ -516,8 +515,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                 ),
                               ),
                               const SizedBox(height: 10),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 60),
+                              Center(
                                 child: GestureDetector(
                                   child: Container(
                                     width: 120,
@@ -623,7 +621,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
       } else if (responsive.maxWidth <= 500) {
         return Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 23.0, vertical: 27.0),
+                const EdgeInsets.symmetric(horizontal: 23.0, vertical: 15.0),
             child: Container(
                 decoration: BoxDecoration(
                     color: Color(0x20D2D2D2),
@@ -911,7 +909,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
       } else if (responsive.maxWidth >= 1000) {
         return Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 23.0, vertical: 30.0),
+                const EdgeInsets.symmetric(horizontal: 23.0, vertical: 15.0),
             child: Row(
               children: [
                 Expanded(
@@ -1257,7 +1255,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
       } else {
         return Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 23.0, vertical: 27.0),
+                const EdgeInsets.symmetric(horizontal: 23.0, vertical: 15.0),
             child: Container(
                 decoration: BoxDecoration(
                     color: Color(0x20D2D2D2),
